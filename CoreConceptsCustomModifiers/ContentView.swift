@@ -19,6 +19,7 @@ struct CustomCircleModifier: View {
             //.shadow(5)
             //.frame(100)
             .defaultSizeAndShadow()
+            .grid(3, 3)
     }
 }
 
@@ -26,6 +27,18 @@ private extension View {
     func defaultSizeAndShadow() -> some View {
         shadow(5)
             .frame(100)
+    }
+    
+    func grid(_ cols: Int, _ rows: Int, spacing: CGFloat = 10) -> some View {
+        VStack(spacing: spacing) {
+            ForEach(0 ..< rows) { _ in
+                HStack(spacing: spacing) {
+                    ForEach(0 ..< cols) { _ in
+                        self
+                    }
+                }
+            }
+        }
     }
 }
 
