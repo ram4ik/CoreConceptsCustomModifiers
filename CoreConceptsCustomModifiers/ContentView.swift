@@ -16,7 +16,15 @@ struct CustomCircleModifier: View {
             //.fill(gradient)
             //.overlay(Circle().stroke(Color.blue, lineWidth: 2))
             .strokeWithFill(Color.blue, fill: gradient)
-            .shadow(5)
+            //.shadow(5)
+            //.frame(100)
+            .defaultSizeAndShadow()
+    }
+}
+
+private extension View {
+    func defaultSizeAndShadow() -> some View {
+        shadow(5)
             .frame(100)
     }
 }
