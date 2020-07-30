@@ -6,10 +6,23 @@
 //
 
 import SwiftUI
+import PureSwiftUI
+
+private let gradient = LinearGradient([Color.purple, Color.pink], to: .trailing)
+
+struct CustomCircleModifier: View {
+    var body: some View {
+        Circle()
+            .fill(gradient)
+            .overlay(Circle().stroke(Color.blue, lineWidth: 2))
+            .shadow(5)
+            .frame(100)
+    }
+}
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!").padding()
+        CustomCircleModifier()
     }
 }
 

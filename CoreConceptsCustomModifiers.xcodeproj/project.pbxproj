@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		95F87BDB24D2BD89000CF583 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F87BDA24D2BD89000CF583 /* ContentView.swift */; };
 		95F87BDD24D2BD8B000CF583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F87BDC24D2BD8B000CF583 /* Assets.xcassets */; };
 		95F87BE024D2BD8B000CF583 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F87BDF24D2BD8B000CF583 /* Preview Assets.xcassets */; };
+		95F87BE924D2BDD8000CF583 /* PureSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95F87BE824D2BDD8000CF583 /* PureSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F87BE924D2BDD8000CF583 /* PureSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +87,9 @@
 			dependencies = (
 			);
 			name = CoreConceptsCustomModifiers;
+			packageProductDependencies = (
+				95F87BE824D2BDD8000CF583 /* PureSwiftUI */,
+			);
 			productName = CoreConceptsCustomModifiers;
 			productReference = 95F87BD524D2BD89000CF583 /* CoreConceptsCustomModifiers.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +117,9 @@
 				Base,
 			);
 			mainGroup = 95F87BCC24D2BD89000CF583;
+			packageReferences = (
+				95F87BE724D2BDD8000CF583 /* XCRemoteSwiftPackageReference "pure-swift-ui" */,
+			);
 			productRefGroup = 95F87BD624D2BD89000CF583 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -328,6 +336,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95F87BE724D2BDD8000CF583 /* XCRemoteSwiftPackageReference "pure-swift-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CodeSlicing/pure-swift-ui.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95F87BE824D2BDD8000CF583 /* PureSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95F87BE724D2BDD8000CF583 /* XCRemoteSwiftPackageReference "pure-swift-ui" */;
+			productName = PureSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 95F87BCD24D2BD89000CF583 /* Project object */;
 }
