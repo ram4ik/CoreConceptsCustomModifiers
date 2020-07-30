@@ -11,6 +11,9 @@ import PureSwiftUI
 private let gradient = LinearGradient([Color.purple, Color.pink], to: .trailing)
 
 struct CustomCircleModifier: View {
+    
+    @State private var isRectangle: Bool = true
+    
     var body: some View {
         Circle()
             //.fill(gradient)
@@ -19,7 +22,13 @@ struct CustomCircleModifier: View {
             //.shadow(5)
             //.frame(100)
             .defaultSizeAndShadow()
+            .returnARectangleIf(isRectangle)
             .grid(3, 3)
+            .onTapGesture {
+                withAnimation {
+                    isRectangle.toggle()
+                }
+            }
     }
 }
 
@@ -27,6 +36,18 @@ private extension View {
     func defaultSizeAndShadow() -> some View {
         shadow(5)
             .frame(100)
+    }
+    
+    @ViewBuilder func returnARectangleIf(_ condition: Bool) -> some View {
+        if condition {
+            Rectangle()
+                .frame(110)
+                .foregroundColor(.blue)
+                .cornerRadius(5)
+                .opacity(0.4)
+        } else {
+            self
+        }
     }
     
     func grid(_ cols: Int, _ rows: Int, spacing: CGFloat = 10) -> some View {
